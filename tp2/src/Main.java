@@ -57,15 +57,21 @@ public class Main {
         Integer number = 0;
         Integer numPersona = 0;
         Integer mayorPersona = persona1.getEdad();
+        Persona pers = persona1;
 
         //ITERAR PARA ENCONTRAR PERSONA DE MAYOR EDAD DENTRO DE LISTA DE PERSONAS
         for(Persona persona : listaPersonas) {
             if (mayorPersona < persona.getEdad()){
                 mayorPersona = persona.getEdad();
                 numPersona = number;
+                pers = persona;
                 number += 1;
             } else {
                 number += 1;
+            }
+            if (number == 5) {
+                System.out.println("La persona de mayor edad en la lista es " +
+                        pers.getNombre() + ' ' + pers.getApellido() + " con " + pers.getEdad() + " años.");
             }
         }
 
@@ -74,6 +80,7 @@ public class Main {
                 listaNombres.get(numPersona) + " con " + listaEdad.get(numPersona) + " años.");
         */
 
+        /*
         //IMPRIMIR PERSONA DE MAYOR EDAD SEGUN LA LISTA DE PERSONA
         if (numPersona == 0){
             System.out.println("La persona de mayor edad en la lista es " +
@@ -91,6 +98,7 @@ public class Main {
             System.out.println("La persona de mayor edad en la lista es " +
                     persona5.getNombre() + " con " + persona5.getEdad() + " años.");
         }
+        */
             /*
             ITERAR PARA ENCONTRAR PERSONA DE MAYOR EDAD DENTRO DE LISTA DE EDAD
         Integer number = 0;
