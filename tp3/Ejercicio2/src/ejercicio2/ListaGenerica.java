@@ -1,7 +1,8 @@
 package ejercicio2;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
+
 
 public class ListaGenerica<T> {
     private ArrayList<T> lista;
@@ -21,10 +22,10 @@ public class ListaGenerica<T> {
         lista.add(0,elemento);
     }
     public void ordenar() {
-        lista.Collection.sort(elemento);
+        Collections.sort(lista);
     }
-    public void desordenar(T elemento) {
-        lista.Collections.shuffle(elemento);
+    public void desordenar() {
+        Collections.shuffle(lista);
     }
     public void addPosition(T elemento, Integer position) {
         lista.add(position, elemento);
@@ -37,7 +38,7 @@ public class ListaGenerica<T> {
     }
     public T obtenerLast() {
         int tam = lista.size();
-        return lista.get(tam);
+        return lista.get(tam-1);
     }
     public void delete(int position) {
         lista.remove(position);
