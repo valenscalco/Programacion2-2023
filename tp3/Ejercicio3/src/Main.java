@@ -1,5 +1,5 @@
-import ejercicio2.Empleado;
-import ejercicio2.ListaGenerica;
+import ejercicio3.Empleado;
+import ejercicio3.ListaGenerica;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,26 +30,48 @@ public class Main {
         listaEmpleados.ordenar();
         System.out.println("Lista ordenada por legajos: " + "\n" + listaEmpleados.getList().toString());
 
-
         //6
         listaEmpleados.desordenar();
         System.out.println("Lista desordenada: " + "\n" + listaEmpleados.getList().toString());
 
         //7
-        listaEmpleados.addPosition(new Empleado("Laila", "Ser", 1, 59879), 2);
+        try {
+            listaEmpleados.addPosition(new Empleado("Laila", "Ser", 1, 59879), 2);
+        } catch (Exception e){
+            System.out.println("Error: " + e.getMessage() );
+        }
         System.out.println(listaEmpleados.getList().toString());
 
         //8
-        System.out.println("Cuarto elemento de la lista: " + "\n" + listaEmpleados.obtener(3));
+        try {
+            System.out.println("Cuarto elemento de la lista: " + "\n" + listaEmpleados.obtener(3));
+        }catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
 
         //9
-        System.out.println("Primer elemento de la lista: " + "\n" + listaEmpleados.obtenerFirst());
+        try{
+            System.out.println("Primer elemento de la lista: " + "\n" + listaEmpleados.obtenerFirst());
+        }catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
 
         //10
-        System.out.println("Ultimo elemento de la lista: " + "\n" + listaEmpleados.obtenerLast());
+        try{
+            System.out.println("Ultimo elemento de la lista: " + "\n" + listaEmpleados.obtenerLast());
+        }catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
 
         //11
-        listaEmpleados.delete(1);
-        System.out.println(listaEmpleados.getList().toString());
+        try{
+            listaEmpleados.delete(1);
+            System.out.println(listaEmpleados.getList().toString());
+        }catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+
+
     }
+
 }

@@ -1,4 +1,4 @@
-package ejercicio2;
+package ejercicio3;
 
 public class Empleado implements Comparable<Empleado> {
     protected String nombre;
@@ -66,6 +66,7 @@ public class Empleado implements Comparable<Empleado> {
                 ", Anios Trabajados: " + this.aniosTrabajados +
                 "\n";
     }
+
     @Override
     public int compareTo(Empleado empleado) {
         if(this.legajo<empleado.getLegajo()){
@@ -76,5 +77,4 @@ public class Empleado implements Comparable<Empleado> {
         }
         return 0;
     }
-
 }
