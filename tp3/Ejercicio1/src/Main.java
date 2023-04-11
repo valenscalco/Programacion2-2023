@@ -1,4 +1,5 @@
 import ejercicio1.Empleado;
+import ejercicio1.SetEmpleados;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,7 +10,7 @@ public class Main {
         m.crearSet();
     }
 
-    public void crearSet(){
+    public <Iterator> void crearSet() {
         Set<Empleado> setEmpleados = new HashSet<>();
 
         Empleado empl1 = new Empleado("Soledad", "Alone", 15, 58974);
@@ -26,26 +27,22 @@ public class Main {
         setEmpleados.add(empl5);
 
         System.out.println(setEmpleados.toString());
+        Set<SetEmpleados> EmpleadoSet = new HashSet<>();
+
+        SetEmpleados empleado1 = new SetEmpleados("Soledad", "Alone", 15, 58974);
+        SetEmpleados empleado2 = new SetEmpleados("Cristian", "Ateo", 1, 58978);
+        SetEmpleados empleado3 = new SetEmpleados("Aiden", "Galager", 7, 58976);
+        SetEmpleados empleado4 = new SetEmpleados("Kayla", "Silveira", 5, 58977);
+        SetEmpleados empleado5 = new SetEmpleados("Cristian", "Ateo", 1, 58978);
+
+
+        EmpleadoSet.add(empleado1);
+        EmpleadoSet.add(empleado2);
+        EmpleadoSet.add(empleado3);
+        EmpleadoSet.add(empleado4);
+        EmpleadoSet.add(empleado5);
+
+        System.out.println(EmpleadoSet);
     }
+
 }
-/* Integer number = 0;
-        Integer numPersona = 0;
-        Integer mayorPersona = persona1.getEdad();
-        Persona pers = persona1;
-
-        //ITERAR PARA ENCONTRAR PERSONA DE MAYOR EDAD DENTRO DE LISTA DE PERSONAS
-        for(Persona persona : listaPersonas) {
-            if (mayorPersona < persona.getEdad()){
-                mayorPersona = persona.getEdad();
-                numPersona = number;
-                pers = persona;
-                number += 1;
-            } else {
-                number += 1;
-            }
-            if (number == 5) {
-                System.out.println("La persona de mayor edad en la lista es " +
-                        pers.getNombre() + ' ' + pers.getApellido() + " con " + pers.getEdad() + " años.");
-            }
-
-    }*/
