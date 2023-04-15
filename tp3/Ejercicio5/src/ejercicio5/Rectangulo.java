@@ -6,20 +6,34 @@ public class Rectangulo implements FiguraGeometrica{
     protected Integer ejeX;
     protected Integer ejeY;
 
-    public Rectangulo(Integer largo, Integer ancho, Integer ejeX, Integer ejeY){
-        this.largo = largo;
-        this.ancho = ancho;
-        this.ejeX = ejeX;
-        this.ejeY = ejeY;
+    public Rectangulo(Integer largo, Integer ancho, Integer ejeX, Integer ejeY) throws Excepciones{
+        try {
+            if (largo > 0 && ancho > 0 && ejeX >= 0 && ejeY >= 0) {
+                this.largo = largo;
+                this.ancho = ancho;
+                this.ejeX = ejeX;
+                this.ejeY = ejeY;
+            }
+            else {
+                throw new Excepciones("El lado, el ancho y los ejes debe ser positivos");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
-
 
     public Integer getLargo() {
         return largo;
     }
 
     public void setLargo(Integer largo) {
-        this.largo = largo;
+        try {
+            if (largo > 0) {
+                this.largo = largo;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getAncho() {
@@ -27,7 +41,13 @@ public class Rectangulo implements FiguraGeometrica{
     }
 
     public void setAncho(Integer ancho) {
-        this.ancho = ancho;
+        try {
+            if (ancho > 0) {
+                this.ancho = ancho;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getEjeX() {
@@ -35,7 +55,13 @@ public class Rectangulo implements FiguraGeometrica{
     }
 
     public void setEjeX(Integer ejeX) {
-        this.ejeX = ejeX;
+        try {
+            if (ejeX >= 0) {
+                this.ejeX = ejeX;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getEjeY() {
@@ -43,7 +69,13 @@ public class Rectangulo implements FiguraGeometrica{
     }
 
     public void setEjeY(Integer ejeY) {
-        this.ejeY = ejeY;
+        try {
+            if (ejeY >= 0) {
+                this.ejeY = ejeY;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

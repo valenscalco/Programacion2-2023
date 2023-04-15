@@ -9,11 +9,20 @@ public class Triangulo implements FiguraGeometrica{
 
 
 
-    public Triangulo(Integer altura, Integer base, Integer ejeX, Integer ejeY){
-        this.base = base;
-        this.altura = altura;
-        this.ejeX = ejeX;
-        this.ejeY = ejeY;
+    public Triangulo(Integer altura, Integer base, Integer ejeX, Integer ejeY) throws Excepciones{
+        try {
+            if (base > 0 && altura > 0 && ejeX >= 0 && ejeY >= 0) {
+                this.base = base;
+                this.altura = altura;
+                this.ejeX = ejeX;
+                this.ejeY = ejeY;
+            }
+            else {
+                throw new Excepciones("La base, la altura y los ejes debe ser positivos");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getBase() {
@@ -21,7 +30,13 @@ public class Triangulo implements FiguraGeometrica{
     }
 
     public void setBase(Integer base) {
-        this.base = base;
+        try {
+            if (base > 0) {
+                this.base = base;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getAltura() {
@@ -29,7 +44,15 @@ public class Triangulo implements FiguraGeometrica{
     }
 
     public void setAltura(Integer altura) {
-        this.altura = altura;
+        try {
+            if (altura > 0) {
+                this.altura = altura;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 
     public Integer getEjeX() {
@@ -37,7 +60,13 @@ public class Triangulo implements FiguraGeometrica{
     }
 
     public void setEjeX(Integer ejeX) {
-        this.ejeX = ejeX;
+        try {
+            if (ejeX >= 0) {
+                this.ejeX = ejeX;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getEjeY() {
@@ -45,7 +74,13 @@ public class Triangulo implements FiguraGeometrica{
     }
 
     public void setEjeY(Integer ejeY) {
-        this.ejeY = ejeY;
+        try {
+            if (ejeY >= 0) {
+                this.ejeY = ejeY;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

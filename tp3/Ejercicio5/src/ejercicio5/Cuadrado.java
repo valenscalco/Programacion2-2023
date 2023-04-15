@@ -6,7 +6,7 @@ public class Cuadrado implements FiguraGeometrica{
     protected Integer ejeY;
 
 
-    public Cuadrado(Integer largo, Integer ejeX, Integer ejeY) throws Exception{
+    public Cuadrado(Integer largo, Integer ejeX, Integer ejeY) throws Excepciones{
         try {
             if (largo > 0 && ejeX >= 0 && ejeY >= 0) {
                 this.largo = largo;
@@ -14,7 +14,7 @@ public class Cuadrado implements FiguraGeometrica{
                 this.ejeY = ejeY;
             }
             else {
-                throw new Exception("El lado o la pos debe ser mayor a 0");
+                throw new Excepciones("El lado y los ejes debe ser positivos");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -41,7 +41,13 @@ public class Cuadrado implements FiguraGeometrica{
     }
 
     public void setEjeX(Integer ejeX) {
-        this.ejeX = ejeX;
+        try {
+            if (ejeX >= 0) {
+                this.ejeX = ejeX;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Integer getEjeY() {
@@ -49,7 +55,13 @@ public class Cuadrado implements FiguraGeometrica{
     }
 
     public void setEjeY(Integer ejeY) {
-        this.ejeY = ejeY;
+        try {
+            if (ejeY >= 0) {
+                this.ejeY = ejeY;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import ejercicio5.Cuadrado;
+import ejercicio5.Excepciones;
 import ejercicio5.Rectangulo;
 import ejercicio5.Triangulo;
 
@@ -22,19 +23,39 @@ public class Main {
 
             System.out.println(listaGeometrica.toString());
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (Excepciones e) {
+            System.out.println(e.getMessage());;
         }
 
         Cuadrado c=null;
         try {
-            c = new Cuadrado(4, 0, 0);
+            c = new Cuadrado(-4, 0, 0);
             Cuadrado c1 = new Cuadrado(4, 0, 0);
+        }
+        catch (Exception e) {
+
+        }
+        Cuadrado c1 = null;
+        try {
+            c1 = new Cuadrado(-1, 0, 0);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        c.calcularPerimetro();
+        Rectangulo r = null;
+        try {
+            r = new Rectangulo(-4, 0, 0, -2);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        Triangulo t = null;
+        try {
+            t = new Triangulo(-4, 0, 0, -2);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
