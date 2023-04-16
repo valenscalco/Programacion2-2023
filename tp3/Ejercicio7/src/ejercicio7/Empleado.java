@@ -1,7 +1,7 @@
 package ejercicio7;
 
 
-public class Empleado{
+public class Empleado {
     protected String nombre;
     protected String apellido;
     protected String aniosTrabajados;
@@ -53,31 +53,38 @@ public class Empleado{
     }
 
 
-    public static Empleado fromString(String stringEmpleado) {
-
+    public static Empleado fromString(String stringEmpleado) throws Excepciones {
         int i = 0;
         String nombre = "";
         String apellido = "";
         String aniosTrabajados = "";
         String legajo = "";
-        stringEmpleado = stringEmpleado.replaceAll(" ","");
+        stringEmpleado = stringEmpleado.replaceAll(" ", "");
         String[] datos = stringEmpleado.split(",");
-        for (i = 0; i < 4; i++) {
-            String atributo = datos[i].split("=")[0];
-            if (atributo.equalsIgnoreCase("nombre")){
-                nombre = datos[i].split("=")[1];
-            } else if (atributo.equalsIgnoreCase("apellido")) {
-                apellido = datos[i].split("=")[1];
-            } else if (atributo.equalsIgnoreCase("legajo")) {
-                legajo = datos[i].split("=")[1];
-            } else {
-                aniosTrabajados = datos[i].split("=")[1];
-            }
-        }
+        try {
+            if (datos.length == 4) {
+                for (i = 0; i < 4; i++) {
+                    String atributo = datos[i].split("=")[0];
+                    if (atributo.equalsIgnoreCase("nombre")) {
+                        nombre = datos[i].split("=")[1];
+                    } else if (atributo.equalsIgnoreCase("apellido")) {
+                        apellido = datos[i].split("=")[1];
+                    } else if (atributo.equalsIgnoreCase("legajo")) {
+                        legajo = datos[i].split("=")[1];
+                    } else {
+                        aniosTrabajados = datos[i].split("=")[1];
+                    }
+                }
 
+            } else {
+                throw new Excepciones("Falta uno o varios campos");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return new Empleado(nombre, apellido, aniosTrabajados, legajo);
     }
-    @Override
+        @Override
     public String toString() {
         return "Nombre: " + this.nombre +
                 ", Apellido: " + this.apellido +
