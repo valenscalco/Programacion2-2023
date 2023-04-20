@@ -1,5 +1,5 @@
 import ejercicio1.Empleado;
-import ejercicio1.SetEmpleados;
+import ejercicio1.SetEmpleado;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,13 +27,13 @@ public class Main {
         setEmpleados.add(empl5);
 
         System.out.println(setEmpleados.toString());
-        Set<SetEmpleados> EmpleadoSet = new HashSet<>();
+        Set<SetEmpleado> EmpleadoSet = new HashSet<>();
 
-        SetEmpleados empleado1 = new SetEmpleados("Soledad", "Alone", 15, 58974);
-        SetEmpleados empleado2 = new SetEmpleados("Cristian", "Ateo", 1, 58978);
-        SetEmpleados empleado3 = new SetEmpleados("Aiden", "Galager", 7, 58976);
-        SetEmpleados empleado4 = new SetEmpleados("Kayla", "Silveira", 5, 58977);
-        SetEmpleados empleado5 = new SetEmpleados("Cristian", "Ateo", 1, 58978);
+        SetEmpleado empleado1 = new SetEmpleado("Soledad", "Alone", 15, 58974);
+        SetEmpleado empleado2 = new SetEmpleado("Cristian", "Ateo", 1, 58978);
+        SetEmpleado empleado3 = new SetEmpleado("Aiden", "Galager", 7, 58976);
+        SetEmpleado empleado4 = new SetEmpleado("Kayla", "Silveira", 5, 58977);
+        SetEmpleado empleado5 = new SetEmpleado("Cristian", "Ateo", 1, 58978);
 
 
         EmpleadoSet.add(empleado1);
