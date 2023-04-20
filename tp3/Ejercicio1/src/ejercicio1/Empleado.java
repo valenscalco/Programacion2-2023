@@ -51,13 +51,6 @@ public class Empleado {
         this.legajo = legajo;
     }
 
-    public void moverPersona() {
-        System.out.println("funcion moverPersona en Persona: "+this.nombre);
-    }
-
-    public void mover() {
-        System.out.println("funcion mover en Persona: " +this.nombre);
-    }
 
     @Override
     public String toString() {

@@ -27,7 +27,7 @@ public class Main {
         setEmpleados.add(empl5);
 
         System.out.println(setEmpleados.toString());
-        Set<SetEmpleado> EmpleadoSet = new HashSet<>();
+        Set<SetEmpleado> EmpleadosSet = new HashSet<>();
 
         SetEmpleado empleado1 = new SetEmpleado("Soledad", "Alone", 15, 58974);
         SetEmpleado empleado2 = new SetEmpleado("Cristian", "Ateo", 1, 58978);
@@ -36,13 +36,13 @@ public class Main {
         SetEmpleado empleado5 = new SetEmpleado("Cristian", "Ateo", 1, 58978);
 
 
-        EmpleadoSet.add(empleado1);
-        EmpleadoSet.add(empleado2);
-        EmpleadoSet.add(empleado3);
-        EmpleadoSet.add(empleado4);
-        EmpleadoSet.add(empleado5);
+        EmpleadosSet.add(empleado1);
+        EmpleadosSet.add(empleado2);
+        EmpleadosSet.add(empleado3);
+        EmpleadosSet.add(empleado4);
+        EmpleadosSet.add(empleado5);
 
-        System.out.println(EmpleadoSet);
+        System.out.println(EmpleadosSet.toString());
     }
 
 }

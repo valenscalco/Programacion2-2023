@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1eb17396-5f04-4250-83f6-7e17a51c7a0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ejercicio1/SetEmpleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ejercicio1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ejercicio1/ejercicio1/Empleado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ejercicio1/ejercicio1/SetEmpleados.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ejercicio1/SetEmpleados.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ejercicio1/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ejercicio1/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ejercicio1/SetEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ejercicio1/SetEmpleado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682016689414</updated>
-      <workItem from="1682016691571" duration="313000" />
+      <workItem from="1682016691571" duration="2592000" />
     </task>
     <servers />
   </component>
