@@ -48,7 +48,7 @@ public class Main {
             e.printStackTrace();
         }
         try {
-            String infoEmpleado7 = "nombre=, legajo=E001,apellido=Marquez,aniosTrabajados=10";
+            String infoEmpleado7 = "nombre=Pablo, legajo=,apellido=Marquez,aniosTrabajados=10";
             Empleado empleado7 = Empleado.fromString(infoEmpleado7);
 
             System.out.println(empleado7.toString());

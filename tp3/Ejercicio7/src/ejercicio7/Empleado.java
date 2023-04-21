@@ -81,6 +81,9 @@ public class Empleado {
             if (Integer.valueOf(aniosTrabajados) <= 0) {
                 throw new Excepciones("Cantidad de años invalida");
             }
+            /*if (nombre.equals("") || apellido.equals("") || legajo.equals("") || aniosTrabajados.equals("")) {
+                throw new Excepciones("Falta completar uno o mas campos");
+            }*/
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
