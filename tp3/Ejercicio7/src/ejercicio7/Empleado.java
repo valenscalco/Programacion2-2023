@@ -75,9 +75,11 @@ public class Empleado {
                         aniosTrabajados = datos[i].split("=")[1];
                     }
                 }
-
-            } else {
+            }else{
                 throw new Excepciones("Falta uno o varios campos");
+            }
+            if (Integer.valueOf(aniosTrabajados) <= 0) {
+                throw new Excepciones("Cantidad de años invalida");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

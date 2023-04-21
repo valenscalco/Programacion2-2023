@@ -55,5 +55,13 @@ public class Main {
         }catch (Excepciones e){
             e.printStackTrace();
         }
+        try {
+            String infoEmpleado8 = "nombre=Emilio, legajo=E001,apellido=Marquez,aniosTrabajados=0";
+            Empleado empleado8 = Empleado.fromString(infoEmpleado8);
+
+            System.out.println(empleado8.toString());
+        }catch (Excepciones e){
+            e.printStackTrace();
+        }
     }
 }
