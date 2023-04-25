@@ -5,10 +5,12 @@ import java.util.List;
 public class Hilo extends Thread{
     private String nombre;
     private List<Integer> lista;
+    private boolean stopHilo;
 
     public Hilo(String nombre, List<Integer> lista) {
         this.nombre = nombre;
         this.lista = lista;
+        this.stopHilo = false;
     }
 
     public List<Integer> getLista() {
