@@ -13,13 +13,13 @@ public class Main {
         int demora = demoras.nextInt();
         iteraciones.close();
         demoras.close();
-        Hilo2 h1_impl = new Hilo2("implement 4", demora, iteracion);
+        Hilo2 h1_impl = new Hilo2("implement 1", demora, iteracion);
         Thread h1 = new Thread(h1_impl);
-        Hilo2 h2_impl = new Hilo2("implement 1", demora, iteracion);
+        Hilo2 h2_impl = new Hilo2("implement 2", demora, iteracion);
         Thread h2 = new Thread(h2_impl);
-        Hilo2 h3_impl = new Hilo2("implement 2", demora, iteracion);
+        Hilo2 h3_impl = new Hilo2("implement 3", demora, iteracion);
         Thread h3 = new Thread(h3_impl);
-        Hilo2 h4_impl = new Hilo2("implement 3", demora, iteracion);
+        Hilo2 h4_impl = new Hilo2("implement 4", demora, iteracion);
         Thread h4 = new Thread(h4_impl);
         h1.start();
         h2.start();
