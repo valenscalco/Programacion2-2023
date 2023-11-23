@@ -14,7 +14,6 @@ import ar.edu.um.programacion2.valenscalco.security.AuthoritiesConstants;
 import ar.edu.um.programacion2.valenscalco.service.UserService;
 import ar.edu.um.programacion2.valenscalco.service.dto.AdminUserDTO;
 import ar.edu.um.programacion2.valenscalco.service.dto.PasswordChangeDTO;
-import ar.edu.um.programacion2.valenscalco.service.dto.UserDTO;
 import ar.edu.um.programacion2.valenscalco.web.rest.vm.KeyAndPasswordVM;
 import ar.edu.um.programacion2.valenscalco.web.rest.vm.ManagedUserVM;
 import java.time.Instant;

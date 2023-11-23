@@ -11,8 +11,8 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/testdb/trabajofinalscalco;DB_CLOSE_DELAY=-1;MODE=LEGACY
-    username: TrabajoFinalScalco
+    url: jdbc:h2:file:./target/h2db/testdb/trabajofinal;DB_CLOSE_DELAY=-1
+    username: trabajoFinal
     password:
     hikari:
       auto-commit: false
@@ -32,4 +32,5 @@ spring:
       hibernate.hbm2ddl.auto: none #TODO: temp relief for integration tests, revisit required
       hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
       hibernate.jdbc.time_zone: UTC
+      hibernate.timezone.default_storage: NORMALIZE
       hibernate.query.fail_on_pagination_over_collection_fetch: true

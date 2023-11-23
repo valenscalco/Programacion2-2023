@@ -3,7 +3,7 @@ package ar.edu.um.programacion2.scalco.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Properties specific to Trabajo Final Scalco.
+ * Properties specific to Trabajo Final.
  * <p>
  * Properties are configured in the {@code application.yml} file.
  * See {@link tech.jhipster.config.JHipsterProperties} for a good example.

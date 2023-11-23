@@ -5,8 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.support.DefaultSingletonBeanRegistry;
 import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.test.context.ContextConfigurationAttributes;
@@ -35,7 +33,7 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
                 if (null == prodTestContainer) {
                     try {
                         Class<? extends SqlTestContainer> containerClass = (Class<? extends SqlTestContainer>) Class.forName(
-                            this.getClass().getPackageName() + ".MariadbTestContainer"
+                            this.getClass().getPackageName() + ".PostgreSqlTestContainer"
                         );
                         prodTestContainer = beanFactory.createBean(containerClass);
                         beanFactory.registerSingleton(containerClass.getName(), prodTestContainer);
@@ -44,12 +42,7 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
                         throw new RuntimeException(e);
                     }
                 }
-                testValues =
-                    testValues.and(
-                        "spring.datasource.url=" +
-                        prodTestContainer.getTestContainer().getJdbcUrl() +
-                        "?useLegacyDatetimeCode=false&serverTimezone=UTC"
-                    );
+                testValues = testValues.and("spring.datasource.url=" + prodTestContainer.getTestContainer().getJdbcUrl() + "");
                 testValues = testValues.and("spring.datasource.username=" + prodTestContainer.getTestContainer().getUsername());
                 testValues = testValues.and("spring.datasource.password=" + prodTestContainer.getTestContainer().getPassword());
             }

@@ -1,6 +1,5 @@
 package ar.edu.um.programacion2.scalco;
 
-import ar.edu.um.programacion2.scalco.TrabajoFinalScalcoApp;
 import ar.edu.um.programacion2.scalco.config.AsyncSyncConfiguration;
 import ar.edu.um.programacion2.scalco.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;
@@ -15,7 +14,7 @@ import org.springframework.test.annotation.DirtiesContext;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { TrabajoFinalScalcoApp.class, AsyncSyncConfiguration.class })
+@SpringBootTest(classes = { TrabajoFinalApp.class, AsyncSyncConfiguration.class })
 @EmbeddedSQL
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

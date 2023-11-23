@@ -15,15 +15,7 @@
 
 spring:
   application:
-    name: TrabajoFinalScalco
-  cloud:
-    consul:
-      discovery:
-        enabled: false
-        instanceId: ${spring.application.name}:${spring.application.instance-id:${random.value}}
-      config:
-        enabled: false
-      enabled: false
+    name: trabajoFinal
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -38,13 +30,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: trabajo-final-scalco-task-
+      thread-name-prefix: trabajo-final-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: trabajo-final-scalco-scheduling-
+      thread-name-prefix: trabajo-final-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -61,9 +53,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'trabajoFinalScalcoApp'
+    name: 'trabajoFinalApp'
   mail:
-    from: TrabajoFinalScalco@localhost.com
+    from: trabajoFinal@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
@@ -77,7 +69,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: NmYxNWNmY2EwNWMzMzk4NzZjM2YwMzFjNjJkOWQ2NjE4ZTkyZmIwOGQ4NGM0NjQ5ODM2YWMwYmJhYjQ0ODk3NTUxODI1ZmE4YzZlM2JkNDM1ZGY2ODMyNjYxMjgzNjUxMWIzMTUxMmY5NzZjMTQ5Y2YyNGFhMjBiNTljYjExZGY=
+        base64-secret: ZjA5MGU0NjgzNTc0MzVkYmRlYjU1NGVlMjMxODM2Zjk3NDAzZDNlMWQ3Njk1N2ZmMzVmYzM2YTRlMzY4ZjM1Yzg2MzgzMzliOGNkYzFkYzdiYzZmY2I1NDNiOGI4YTgyMjFhODA1MjYxYTViYTlkNTUwMTkwNTliYWI5NmM1MmI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 86400

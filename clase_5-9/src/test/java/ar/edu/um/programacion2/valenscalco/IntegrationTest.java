@@ -1,6 +1,5 @@
 package ar.edu.um.programacion2.valenscalco;
 
-import ar.edu.um.programacion2.valenscalco.Demo1App;
 import ar.edu.um.programacion2.valenscalco.config.AsyncSyncConfiguration;
 import ar.edu.um.programacion2.valenscalco.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;
