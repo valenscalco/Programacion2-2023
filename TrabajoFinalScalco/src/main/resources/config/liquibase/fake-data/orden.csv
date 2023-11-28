@@ -1,11 +1,11 @@
-id;accion_id;accion;operacion;cantidad;fecha_operacion;modo;operacion_exitosa;descripcion;ejecutada;reportada;cliente_id
-1;7939;accost route;oof;13569;2023-11-27T03:05:47;where liken;false;decisive;true;false;30686
-2;10508;rigidly scythe unfortunate;behind speedily;11855;2023-11-27T16:03:36;indelible;true;usually;false;false;22358
-3;30524;lest beside;lunch occlude chart;5424;2023-11-27T08:31:33;hence because;false;dazzling;false;true;6930
-4;22661;toward;shakily and rowdy;18391;2023-11-27T12:20:52;all fooey;true;till that dungeon;true;false;19165
-5;20769;yuck ouch;once furthermore ack;2400;2023-11-27T00:26:57;deviate glorious;false;combination;true;true;29478
-6;11359;numb although indeed;triumphantly lest;8048;2023-11-27T02:14:05;since once fooey;false;vacantly limply;false;true;3623
-7;6769;through very basics;amused for;11125;2023-11-27T11:56:37;easily tightly undershoot;false;tenderise blab whenever;false;false;6262
-8;25180;critical quail jumbo;chowder agonizing;9300;2023-11-27T07:45:04;overgeneralize playfully;true;important pish anglicise;false;true;18926
-9;6283;whose chaperone;mmm;5949;2023-11-27T16:27:10;next questionably bah;false;fully;false;false;4032
-10;31886;gently;ew;9162;2023-11-27T17:57:09;pelt spritz;false;yahoo;true;true;14389
+id;accion_id;accion;operacion;cantidad;fecha_operacion;modo;operacion_exitosa;descripcion;ejecutada;reportada;cliente_id;precio
+1;7939;accost route;oof;13569;2023-11-27T03:05:47;where liken;false;decisive;true;false;30686;10508.42
+2;23938;outside max;courageous;24059;2023-11-27T10:03:42;till residue;true;once sell;false;false;30524;19834.44
+3;9242;boo;along inside harm;7098;2023-11-27T09:21:03;lieutenant throughout fooey;true;lantern;true;false;2464;7719.47
+4;14158;warmly;beside since yippee;7877;2023-11-27T08:19:42;blindly churn;false;circulation;false;true;20713;21094.14
+5;27211;speedily smoothly till;kindly foolishly;8185;2023-11-27T05:22:43;ack;true;boo scented zowie;false;true;5971;7341.11
+6;859;striking fast broadly;at carefully bay;11079;2023-11-26T23:29:52;only;true;fooey stained;true;false;9926;25475.14
+7;17634;even recess bore;basics regain pack;6515;2023-11-27T13:25:20;phooey CD;false;radar aha;false;true;28094;30659.94
+8;13132;exacerbate zowie;supposing within meanwhile;6243;2023-11-26T23:45:07;reverberate indeed overgeneralize;true;who important;false;true;18887;13018.09
+9;3658;who;scavenge;23294;2023-11-27T10:09:23;hence daily;false;database gee;false;false;8067;20311.35
+10;9770;above fully;lest drat daintily;17657;2023-11-27T19:11:36;like evergreen;false;hardening;true;false;22003;28134.82

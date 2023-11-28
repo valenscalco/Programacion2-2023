@@ -53,6 +53,11 @@
       "fieldName": "clienteId",
       "fieldType": "Integer",
       "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
     }
   ],
   "jpaMetamodelFiltering": false,

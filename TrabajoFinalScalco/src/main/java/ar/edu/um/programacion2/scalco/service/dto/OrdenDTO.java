@@ -42,6 +42,9 @@ public class OrdenDTO implements Serializable {
     @NotNull
     private Integer clienteId;
 
+    @NotNull
+    private Float precio;
+
     public Long getId() {
         return id;
     }
@@ -138,6 +141,14 @@ public class OrdenDTO implements Serializable {
         this.clienteId = clienteId;
     }
 
+    public Float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -175,6 +186,7 @@ public class OrdenDTO implements Serializable {
             ", ejecutada='" + getEjecutada() + "'" +
             ", reportada='" + getReportada() + "'" +
             ", clienteId=" + getClienteId() +
+            ", precio=" + getPrecio() +
             "}";
     }
 }

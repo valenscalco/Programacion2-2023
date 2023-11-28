@@ -64,6 +64,10 @@ public class Orden implements Serializable {
     @Column(name = "cliente_id", nullable = false)
     private Integer clienteId;
 
+    @NotNull
+    @Column(name = "precio", nullable = false)
+    private Float precio;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -222,6 +226,19 @@ public class Orden implements Serializable {
         this.clienteId = clienteId;
     }
 
+    public Float getPrecio() {
+        return this.precio;
+    }
+
+    public Orden precio(Float precio) {
+        this.setPrecio(precio);
+        return this;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -257,6 +274,7 @@ public class Orden implements Serializable {
             ", ejecutada='" + getEjecutada() + "'" +
             ", reportada='" + getReportada() + "'" +
             ", clienteId=" + getClienteId() +
+            ", precio=" + getPrecio() +
             "}";
     }
 }

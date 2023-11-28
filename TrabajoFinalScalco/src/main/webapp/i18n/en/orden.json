@@ -28,7 +28,8 @@
       "descripcion": "Descripcion",
       "ejecutada": "Ejecutada",
       "reportada": "Reportada",
-      "clienteId": "Cliente Id"
+      "clienteId": "Cliente Id",
+      "precio": "Precio"
     }
   }
 }

@@ -69,6 +69,9 @@ class OrdenResourceIT {
     private static final Integer DEFAULT_CLIENTE_ID = 1;
     private static final Integer UPDATED_CLIENTE_ID = 2;
 
+    private static final Float DEFAULT_PRECIO = 1F;
+    private static final Float UPDATED_PRECIO = 2F;
+
     private static final String ENTITY_API_URL = "/api/ordens";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -107,7 +110,8 @@ class OrdenResourceIT {
             .descripcion(DEFAULT_DESCRIPCION)
             .ejecutada(DEFAULT_EJECUTADA)
             .reportada(DEFAULT_REPORTADA)
-            .clienteId(DEFAULT_CLIENTE_ID);
+            .clienteId(DEFAULT_CLIENTE_ID)
+            .precio(DEFAULT_PRECIO);
         return orden;
     }
 
@@ -129,7 +133,8 @@ class OrdenResourceIT {
             .descripcion(UPDATED_DESCRIPCION)
             .ejecutada(UPDATED_EJECUTADA)
             .reportada(UPDATED_REPORTADA)
-            .clienteId(UPDATED_CLIENTE_ID);
+            .clienteId(UPDATED_CLIENTE_ID)
+            .precio(UPDATED_PRECIO);
         return orden;
     }
 
@@ -163,6 +168,7 @@ class OrdenResourceIT {
         assertThat(testOrden.getEjecutada()).isEqualTo(DEFAULT_EJECUTADA);
         assertThat(testOrden.getReportada()).isEqualTo(DEFAULT_REPORTADA);
         assertThat(testOrden.getClienteId()).isEqualTo(DEFAULT_CLIENTE_ID);
+        assertThat(testOrden.getPrecio()).isEqualTo(DEFAULT_PRECIO);
     }
 
     @Test
@@ -312,6 +318,24 @@ class OrdenResourceIT {
 
     @Test
     @Transactional
+    void checkPrecioIsRequired() throws Exception {
+        int databaseSizeBeforeTest = ordenRepository.findAll().size();
+        // set the field null
+        orden.setPrecio(null);
+
+        // Create the Orden, which fails.
+        OrdenDTO ordenDTO = ordenMapper.toDto(orden);
+
+        restOrdenMockMvc
+            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(ordenDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<Orden> ordenList = ordenRepository.findAll();
+        assertThat(ordenList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     void getAllOrdens() throws Exception {
         // Initialize the database
         ordenRepository.saveAndFlush(orden);
@@ -332,7 +356,8 @@ class OrdenResourceIT {
             .andExpect(jsonPath("$.[*].descripcion").value(hasItem(DEFAULT_DESCRIPCION)))
             .andExpect(jsonPath("$.[*].ejecutada").value(hasItem(DEFAULT_EJECUTADA.booleanValue())))
             .andExpect(jsonPath("$.[*].reportada").value(hasItem(DEFAULT_REPORTADA.booleanValue())))
-            .andExpect(jsonPath("$.[*].clienteId").value(hasItem(DEFAULT_CLIENTE_ID)));
+            .andExpect(jsonPath("$.[*].clienteId").value(hasItem(DEFAULT_CLIENTE_ID)))
+            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())));
     }
 
     @Test
@@ -357,7 +382,8 @@ class OrdenResourceIT {
             .andExpect(jsonPath("$.descripcion").value(DEFAULT_DESCRIPCION))
             .andExpect(jsonPath("$.ejecutada").value(DEFAULT_EJECUTADA.booleanValue()))
             .andExpect(jsonPath("$.reportada").value(DEFAULT_REPORTADA.booleanValue()))
-            .andExpect(jsonPath("$.clienteId").value(DEFAULT_CLIENTE_ID));
+            .andExpect(jsonPath("$.clienteId").value(DEFAULT_CLIENTE_ID))
+            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()));
     }
 
     @Test
@@ -390,7 +416,8 @@ class OrdenResourceIT {
             .descripcion(UPDATED_DESCRIPCION)
             .ejecutada(UPDATED_EJECUTADA)
             .reportada(UPDATED_REPORTADA)
-            .clienteId(UPDATED_CLIENTE_ID);
+            .clienteId(UPDATED_CLIENTE_ID)
+            .precio(UPDATED_PRECIO);
         OrdenDTO ordenDTO = ordenMapper.toDto(updatedOrden);
 
         restOrdenMockMvc
@@ -416,6 +443,7 @@ class OrdenResourceIT {
         assertThat(testOrden.getEjecutada()).isEqualTo(UPDATED_EJECUTADA);
         assertThat(testOrden.getReportada()).isEqualTo(UPDATED_REPORTADA);
         assertThat(testOrden.getClienteId()).isEqualTo(UPDATED_CLIENTE_ID);
+        assertThat(testOrden.getPrecio()).isEqualTo(UPDATED_PRECIO);
     }
 
     @Test
@@ -495,7 +523,13 @@ class OrdenResourceIT {
         Orden partialUpdatedOrden = new Orden();
         partialUpdatedOrden.setId(orden.getId());
 
-        partialUpdatedOrden.modo(UPDATED_MODO).reportada(UPDATED_REPORTADA).clienteId(UPDATED_CLIENTE_ID);
+        partialUpdatedOrden
+            .operacion(UPDATED_OPERACION)
+            .operacionExitosa(UPDATED_OPERACION_EXITOSA)
+            .descripcion(UPDATED_DESCRIPCION)
+            .reportada(UPDATED_REPORTADA)
+            .clienteId(UPDATED_CLIENTE_ID)
+            .precio(UPDATED_PRECIO);
 
         restOrdenMockMvc
             .perform(
@@ -511,15 +545,16 @@ class OrdenResourceIT {
         Orden testOrden = ordenList.get(ordenList.size() - 1);
         assertThat(testOrden.getAccionId()).isEqualTo(DEFAULT_ACCION_ID);
         assertThat(testOrden.getAccion()).isEqualTo(DEFAULT_ACCION);
-        assertThat(testOrden.getOperacion()).isEqualTo(DEFAULT_OPERACION);
+        assertThat(testOrden.getOperacion()).isEqualTo(UPDATED_OPERACION);
         assertThat(testOrden.getCantidad()).isEqualTo(DEFAULT_CANTIDAD);
         assertThat(testOrden.getFechaOperacion()).isEqualTo(DEFAULT_FECHA_OPERACION);
-        assertThat(testOrden.getModo()).isEqualTo(UPDATED_MODO);
-        assertThat(testOrden.getOperacionExitosa()).isEqualTo(DEFAULT_OPERACION_EXITOSA);
-        assertThat(testOrden.getDescripcion()).isEqualTo(DEFAULT_DESCRIPCION);
+        assertThat(testOrden.getModo()).isEqualTo(DEFAULT_MODO);
+        assertThat(testOrden.getOperacionExitosa()).isEqualTo(UPDATED_OPERACION_EXITOSA);
+        assertThat(testOrden.getDescripcion()).isEqualTo(UPDATED_DESCRIPCION);
         assertThat(testOrden.getEjecutada()).isEqualTo(DEFAULT_EJECUTADA);
         assertThat(testOrden.getReportada()).isEqualTo(UPDATED_REPORTADA);
         assertThat(testOrden.getClienteId()).isEqualTo(UPDATED_CLIENTE_ID);
+        assertThat(testOrden.getPrecio()).isEqualTo(UPDATED_PRECIO);
     }
 
     @Test
@@ -545,7 +580,8 @@ class OrdenResourceIT {
             .descripcion(UPDATED_DESCRIPCION)
             .ejecutada(UPDATED_EJECUTADA)
             .reportada(UPDATED_REPORTADA)
-            .clienteId(UPDATED_CLIENTE_ID);
+            .clienteId(UPDATED_CLIENTE_ID)
+            .precio(UPDATED_PRECIO);
 
         restOrdenMockMvc
             .perform(
@@ -570,6 +606,7 @@ class OrdenResourceIT {
         assertThat(testOrden.getEjecutada()).isEqualTo(UPDATED_EJECUTADA);
         assertThat(testOrden.getReportada()).isEqualTo(UPDATED_REPORTADA);
         assertThat(testOrden.getClienteId()).isEqualTo(UPDATED_CLIENTE_ID);
+        assertThat(testOrden.getPrecio()).isEqualTo(UPDATED_PRECIO);
     }
 
     @Test

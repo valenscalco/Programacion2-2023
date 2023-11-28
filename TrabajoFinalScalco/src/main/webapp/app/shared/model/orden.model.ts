@@ -11,6 +11,7 @@ export interface IOrden {
   ejecutada?: boolean | null;
   reportada?: boolean | null;
   clienteId?: number;
+  precio?: number;
 }
 
 export const defaultValue: Readonly<IOrden> = {

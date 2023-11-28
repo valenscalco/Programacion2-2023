@@ -100,6 +100,12 @@ export const OrdenDetail = () => {
             </span>
           </dt>
           <dd>{ordenEntity.clienteId}</dd>
+          <dt>
+            <span id="precio">
+              <Translate contentKey="trabajoFinalApp.orden.precio">Precio</Translate>
+            </span>
+          </dt>
+          <dd>{ordenEntity.precio}</dd>
         </dl>
         <Button tag={Link} to="/orden" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

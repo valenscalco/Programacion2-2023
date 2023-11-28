@@ -132,6 +132,10 @@ export const Orden = () => {
                   <Translate contentKey="trabajoFinalApp.orden.clienteId">Cliente Id</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('clienteId')} />
                 </th>
+                <th className="hand" onClick={sort('precio')}>
+                  <Translate contentKey="trabajoFinalApp.orden.precio">Precio</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('precio')} />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -154,6 +158,7 @@ export const Orden = () => {
                   <td>{orden.ejecutada ? 'true' : 'false'}</td>
                   <td>{orden.reportada ? 'true' : 'false'}</td>
                   <td>{orden.clienteId}</td>
+                  <td>{orden.precio}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/orden/${orden.id}`} color="info" size="sm" data-cy="entityDetailsButton">

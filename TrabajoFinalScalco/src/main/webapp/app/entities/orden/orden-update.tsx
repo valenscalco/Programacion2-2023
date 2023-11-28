@@ -57,6 +57,9 @@ export const OrdenUpdate = () => {
     if (values.clienteId !== undefined && typeof values.clienteId !== 'number') {
       values.clienteId = Number(values.clienteId);
     }
+    if (values.precio !== undefined && typeof values.precio !== 'number') {
+      values.precio = Number(values.precio);
+    }
 
     const entity = {
       ...ordenEntity,
@@ -200,6 +203,17 @@ export const OrdenUpdate = () => {
                 id="orden-clienteId"
                 name="clienteId"
                 data-cy="clienteId"
+                type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
+                }}
+              />
+              <ValidatedField
+                label={translate('trabajoFinalApp.orden.precio')}
+                id="orden-precio"
+                name="precio"
+                data-cy="precio"
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
