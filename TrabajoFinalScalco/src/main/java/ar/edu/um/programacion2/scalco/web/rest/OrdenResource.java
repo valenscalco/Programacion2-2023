@@ -1,7 +1,9 @@
 package ar.edu.um.programacion2.scalco.web.rest;
 
+import ar.edu.um.programacion2.scalco.domain.Orden;
 import ar.edu.um.programacion2.scalco.repository.OrdenRepository;
 import ar.edu.um.programacion2.scalco.service.OrdenService;
+import ar.edu.um.programacion2.scalco.service.ObtenerService;
 import ar.edu.um.programacion2.scalco.service.dto.OrdenDTO;
 import ar.edu.um.programacion2.scalco.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
@@ -9,12 +11,17 @@ import jakarta.validation.constraints.NotNull;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
@@ -23,9 +30,10 @@ import tech.jhipster.web.util.ResponseUtil;
  * REST controller for managing {@link ar.edu.um.programacion2.scalco.domain.Orden}.
  */
 @RestController
-@RequestMapping("/api/ordens")
+@RequestMapping("/api")
 public class OrdenResource {
-
+    @Autowired
+    ObtenerService obtenerService;
     private final Logger log = LoggerFactory.getLogger(OrdenResource.class);
 
     private static final String ENTITY_NAME = "orden";
@@ -171,4 +179,5 @@ public class OrdenResource {
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
     }
+
 }
